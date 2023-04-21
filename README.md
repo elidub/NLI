@@ -44,10 +44,10 @@ python nli/preprocess.py --download_snli --download_glove --create_vocab
 - `figs/` default directory where figures and images can be saved
 - `jobs/` scripts to send jobs to LISA
 	- `slurm_output/` SLURM output files of the jobs
-- `logs/` trained models and related data such as checkpoint files, Tensorboard, calculated accuracies. Can be downloaded [here](https://drive.google.com/file/d/1sttjLJdJ6hFLF_si3Fbz6wDyVDccpEMv/view?usp=sharing) (zip-file)
-- `nli/` source code that trains on SNLI, evaluates on SentEval and calculates these results. _For a detailed overview of this folder structure and usage, see its README._
-- `SentEval/` cloned repository from FAIR
-- `store/` directory to store intermediate files, i.e. the vocabulary
+- `logs/` To be downloaded [here](https://drive.google.com/file/d/1sttjLJdJ6hFLF_si3Fbz6wDyVDccpEMv/view?usp=sharing) (zip-file). Contains pretrained models and related data such as checkpoint files, Tensorboard and calculated accuracies. 
+- `nli/` source code that trains on SNLI, evaluates on SentEval and calculates these results. See the table [below](#nli-structure) for detailed overview.
+- `SentEval/` to be cloned repository from FAIR.
+- `store/` directory to store intermediate files, i.e. the vocabulary.
 - `analysis.ipynb` Notebook that explains problem, shows and discusses results, error and confidence analysis, sentence embedding enhancements. 
 
 ### `nli/` structure
@@ -67,7 +67,7 @@ python nli/preprocess.py --download_snli --download_glove --create_vocab
 
 ## Run instructions
 ### Quick Start
-To directly train, evaluate and store the results, where `avg_word_emb` is one of the four models in `[avg_word_emb, uni_lstm, bi_lstm, max_pool_lstm]`, run the commands below. However, with  `logs/` downloaded with the links above, one can directly analyze the results in `analysis.ipynb`. One can inspect the training on TensorBoard with `tensorboard --logdir logs`.
+To directly train, evaluate and store the results, where `avg_word_emb` is one of the four models in `[avg_word_emb, uni_lstm, bi_lstm, max_pool_lstm]`, run the commands below. However, with  `logs/` downloaded from the link [above](#code-structure), one can directly analyze the results in `analysis.ipynb`. One can inspect the training on TensorBoard with `tensorboard --logdir logs`.
 ```
 python nli/train.py   --model_type avg_word_emb
 python nli/eval.py    --model_type avg_word_emb
@@ -77,24 +77,24 @@ python nli/results.py --model_type avg_word_emb
 ### Scripts
 Here, the most important flags and their use cases for the scripts are being discussed
 
-- `preprocess.py`
+- `nli/preprocess.py`
 	- `--download_snli` Download and pre-process the SNLI dataset.
 	- `--download_glove` Download the GloVe dataset.
 	- `--create_vocab` Create the vocabulary.
-- `train.py`
+- `nli/train.py`
 	- `--model_type` Chose one of the model types `[avg_word_emb, uni_lstm, bi_lstm, max_pool_lstm]`.
 	- `--feature_type` Chose the feature type `[baseline, multiplication]` for sentence embedding enhancement. Default is `baseline`. 
 	- `--ckpt_path` Give a path where the model will saved inside `logs/`. Default is set to be the same as `model_type`.
 	- `--version` Give a subdirectory path where the model will be saved inside `logs/ckpt_path/`. Default is `version_0`
-- `eval.py`
-	- `--model_type, --ckpt_path, --version` See `train.py`.
-- `results.py`
-	- `--model_type, --feature_type, --ckpt_path, --version` See `train.py`.
+- `nli/eval.py`
+	- `--model_type, --ckpt_path, --version` See `nli/train.py`.
+- `nli/results.py`
+	- `--model_type, --feature_type, --ckpt_path, --version` See `nli/train.py`.
 	- `--transfers_results` When this flag is given, the SentEval transfer results wil _not_ be calculated.
 	- `--nli_results` When this flag is given, the NLI task results wil _not_ be calculated.
 
 ### Pretrained models
-Pretrained models can be downloaded, see the main README for a link. This folder should be directory `logs/`. To work with them, know that:
+Pretrained models can be downloaded, see the link [above](#code-structure). This folder should be directory `logs/`. To work with them, know that:
 - All models have `--version version_0`
 - All `--feature_type baseline` models have default `ckpt_path`, i.e. the same as its `model_type`.
 - All `--feature_type multiplication` have `--ckpt_path <MODEL_TYPE>_mult`.
