@@ -5,4 +5,4 @@ SentEval/
 nli/__pycache__/
 logs/
 logs_without_store/
-jobs/slurm_output/
+jobs/slurm_output/*.out
