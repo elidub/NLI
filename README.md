@@ -6,7 +6,7 @@ This is a reprodicibilty report of [_Supervised Learning of Universal Sentence R
   <img align="middle" src="figs/models.png" height="300" /> 
   <img align="middle" src="figs/confs.png" height="300" /> 
   <br>
-  <img align="middle" src="figs/features.png" width="400" />
+  <img align="middle" src="figs/features.png" height="100" />
 </p>
 
 **Top left**. The four models that are implemented for the NLI task. **Top right.** Example of plots that are used to analyze the confidence and why certain models fail. **Bottom.** Each sentence embedding is enhanced by multiplying it with a trainable parameters. The multiplier behavior during training is shown.
@@ -46,7 +46,9 @@ python nli/eval.py    --model_type avg_word_emb
 python nli/results.py --model_type avg_word_emb
 ```
 
-One can inspect the training on TensorBoard with `tensorboard --logdir logs`. Once multiple models have been trained, they can be analyzed in `analysis.ipynb`. **A detailed guide on training and evaluating can be found in `nli/README.md`**
+One can inspect the training on TensorBoard with `tensorboard --logdir logs`. Once multiple models have been trained, they can be analyzed in `analysis.ipynb`. 
+
+> **A detailed guide on training and evaluating can be found in `nli/README.md`**
 
 ## Code structure
 - `data/` default directory where GloVe and SNLI are saved
