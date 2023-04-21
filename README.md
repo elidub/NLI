@@ -4,7 +4,7 @@ This is a reprodicibilty report of [_Supervised Learning of Universal Sentence R
 
 <p float="left" align="middle">
   <img align="middle" src="figs/models.png" width="600" /> 
-  <img align="middle" src="figs/confs.png" width="200" /> 
+  <img align="middle" src="figs/confs.png" width="300" /> 
   <br>
   <img align="middle" src="figs/features.png" width="400" />
 </p>
