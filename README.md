@@ -44,7 +44,7 @@ python nli/preprocess.py --download_snli --download_glove --create_vocab
 - `figs/` default directory where figures and images can be saved
 - `jobs/` scripts to send jobs to LISA
 	- `slurm_output/` SLURM output files of the jobs
-- `logs/` To be downloaded [here](https://drive.google.com/drive/folders/1-R0p5JTidy0euu2LccLlkaTwgoimnV5G?usp=sharing) (3.58 GB folder). Contains pretrained models and related data such as checkpoint files, Tensorboard and calculated accuracies. 
+- `logs/` To be downloaded [here](https://drive.google.com/drive/folders/1-R0p5JTidy0euu2LccLlkaTwgoimnV5G?usp=sharing) (2.8 GB folder). Contains pretrained models and related data such as checkpoint files, Tensorboard and calculated accuracies. 
 - `nli/` source code that trains on SNLI, evaluates on SentEval and calculates these results. See the table [below](#nli-structure) for detailed overview.
 - `SentEval/` to be cloned repository from FAIR.
 - `store/` directory to store intermediate files, i.e. the vocabulary.
