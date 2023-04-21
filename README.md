@@ -33,7 +33,7 @@ cd ../../.. # Go back to main dir
 ```
 Comment about `cp ... senteval/utils.py`: Because we pass some extra arguments to the `batcher` function in SentEval, we have to comment out a check that doesn't allow custom arguments being passed. That is, line `89 - 93` from `/SentEval/senteval/utils.py` are commented out.
 
-Downloading and preprocessing SNLI, downloading GloVe and creating the vocabulary can all be done at once. The vocabulary can also be downloaded [here](https://drive.google.com/file/d/1syMGFLZimX5SBFVh3bxpRiGdVV9Bc8q6/view?usp=sharing), in that case flag `--create_vocab` can be omitted. Default directory is `store/vocab.pkl`. 
+Downloading and preprocessing SNLI, downloading GloVe and creating the vocabulary can all be done at once. The vocabulary can also be downloaded [here](https://drive.google.com/file/d/1syMGFLZimX5SBFVh3bxpRiGdVV9Bc8q6/view?usp=sharing) (47 MB pickle file), in that case flag `--create_vocab` can be omitted. Default directory is `store/vocab.pkl`. 
 ```
 python nli/preprocess.py --download_snli --download_glove --create_vocab
 ```
@@ -44,7 +44,7 @@ python nli/preprocess.py --download_snli --download_glove --create_vocab
 - `figs/` default directory where figures and images can be saved
 - `jobs/` scripts to send jobs to LISA
 	- `slurm_output/` SLURM output files of the jobs
-- `logs/` To be downloaded [here](https://drive.google.com/file/d/1sttjLJdJ6hFLF_si3Fbz6wDyVDccpEMv/view?usp=sharing) (zip-file). Contains pretrained models and related data such as checkpoint files, Tensorboard and calculated accuracies. 
+- `logs/` To be downloaded [here](https://drive.google.com/drive/folders/1-R0p5JTidy0euu2LccLlkaTwgoimnV5G?usp=sharing) (3.58 GB folder). Contains pretrained models and related data such as checkpoint files, Tensorboard and calculated accuracies. 
 - `nli/` source code that trains on SNLI, evaluates on SentEval and calculates these results. See the table [below](#nli-structure) for detailed overview.
 - `SentEval/` to be cloned repository from FAIR.
 - `store/` directory to store intermediate files, i.e. the vocabulary.
