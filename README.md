@@ -67,7 +67,7 @@ python nli/preprocess.py --download_snli --download_glove --create_vocab
 
 ## Run instructions
 ### Quick Start
-To directly train, evaluate and store the results, where `avg_word_emb` is one of the four models in `[avg_word_emb, uni_lstm, bi_lstm, max_pool_lstm]`. However, with  `logs/` downloaded with the links above, one can directly analyze the results in `analysis.ipynb`. One can inspect the training on TensorBoard with `tensorboard --logdir logs`.
+To directly train, evaluate and store the results, where `avg_word_emb` is one of the four models in `[avg_word_emb, uni_lstm, bi_lstm, max_pool_lstm]`, run the commands below. However, with  `logs/` downloaded with the links above, one can directly analyze the results in `analysis.ipynb`. One can inspect the training on TensorBoard with `tensorboard --logdir logs`.
 ```
 python nli/train.py   --model_type avg_word_emb
 python nli/eval.py    --model_type avg_word_emb
