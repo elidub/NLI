@@ -1,0 +1,8 @@
+data/glove.840B.300d.txt
+data/snli/
+store/vocab.pkl
+SentEval/
+nli/__pycache__/
+logs/
+logs_without_store/
+jobs/slurm_output/
