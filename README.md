@@ -107,7 +107,8 @@ python nli/eval.py    --model_type <MODEL_TYPE>
 python nli/results.py --model_type <MODEL_TYPE>
 
 # Enhanced 'multiplication' features
-python nli/train.py   --model_type <MODEL_TYPE> --feature_type multiplication
+python nli/train.py   --model_type <MODEL_TYPE> --feature_type multiplication \
+	--ckpt_path <MODEL_TYPE>_mult 
 python nli/results.py --model_type <MODEL_TYPE> --feature_type multiplication \
 	--ckpt_path <MODEL_TYPE>_mult --transfer_results
 ```
