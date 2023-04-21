@@ -3,8 +3,8 @@
 This is a reprodicibilty report of [_Supervised Learning of Universal Sentence Representations from Natural Language Inference Data_ by Conneau _et al._ (2017)](https://arxiv.org/abs/1705.02364), where we reproduce and analyze the main findings. Various models are trained on a Natural Language Inference (NLI) task. These trained models function as encoders for sentence embeddings for [_SentEval_ by Conneau and Kiela (2018)](https://arxiv.org/abs/1803.05449), a benchmark transfer task suite. Furthermore, we analyze why certain models perform better than others by looking at the distribution and confidence of the predictions. Finally, we explore how sentence embeddings can be enhanced by multiplying them with trainable parameter.
 
 <p float="left" align="middle">
-  <img align="middle" src="figs/models.png" heigth="50" /> 
-  <img align="middle" src="figs/confs.png" heigth="50" /> 
+  <img align="middle" src="figs/models.png" height="50" /> 
+  <img align="middle" src="figs/confs.png" height="50" /> 
   <br>
   <img align="middle" src="figs/features.png" width="400" />
 </p>
